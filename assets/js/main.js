@@ -19,8 +19,20 @@ $( document ).ready(function() {
   $("#contenitore").append(elmentmsg);
 
   // ripuliamo il contenuto dell'input, per UX
-  $(".message").val(" ");
+  $(".message").val("");
 
   })
+
+
+  // $(window).on({
+  //       keypress: function (k) {
+  //           console.log(k); //check which keycode
+  //
+  //           if (k.keyCode == "13") {
+  //               sendmsgs();
+  //           }
+  //
+  //       }
+  //   });
 
 });

@@ -57,12 +57,19 @@ overflow-y: scroll;
 }
 .container-chat
 {
+
   width: 100%;
   height: calc(85vh - 30px);
   overflow-y: scroll;
   background-image: url("../img/sfondochat.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+  /*debug*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 .keyboard
 {
@@ -80,20 +87,27 @@ overflow-y: scroll;
  {
    font-size: 2em;
  }
+
+ /*finestra del messaggio*/
  #contenitore
  {
     margin: 50px 20px;
     text-align: right;
- }
+}
  #template {
   display: none;
 }
-.msgsent {
-  background-color: rgb(127, 203, 80);
-  padding: 5px;
+
+.msgsent
+{
   margin-top: 10px;
+}
+.msgsent .testo {
+  background-color: rgb(127, 203, 80);
+  display: inline;
+  padding: 5px 15px;
 }
 .ora-invio
 {
-text-align: right;
+  background-color: rgb(127, 203, 80);
 }
