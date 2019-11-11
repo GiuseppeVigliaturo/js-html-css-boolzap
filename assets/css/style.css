@@ -1,0 +1,55 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.profilo-user
+{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.profilo-contatto
+{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.container-contatti
+{
+  display: flex;
+  flex-direction: column;
+}
+.notifiche
+{
+padding: 30px;
+border: 1px solid black;
+}
+.searchbar
+{
+  padding: 15px;
+  border: 1px solid black;
+}
+.contatto
+{
+padding: 30px;
+border: 1px solid black;
+}
+.listacontatti{
+width: 100%;
+height: calc(90vh - 30px);
+overflow-y: scroll;
+margin-bottom: 25px;
+}
+.container-chat
+{
+  width: 100%;
+  height: calc(90vh - 30px);
+  overflow-y: scroll;
+  margin-bottom: 25px;
+  background-image: url("../img/sfondochat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
