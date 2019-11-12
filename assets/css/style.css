@@ -97,13 +97,23 @@ overflow-y: auto;
  }
 
  /*finestra del messaggio*/
- #contenitore
+ #contenitore-mymessages
  {
-    margin: 50px 20px;
     text-align: right;
+    /* overflow: hidden; */
+    margin-right: 10px;
+}
+#contenitore-answer
+{
+   text-align: left;
+   margin-left: 10px;
+   /* overflow: hidden; */
 }
  #template {
   display: none;
+}
+#template-risp {
+ display: none;
 }
 
 .msgsent
@@ -115,9 +125,24 @@ overflow-y: auto;
   display: inline;
   padding: 5px 15px;
 }
+
+/* per la risposta */
+.risposta
+{
+  margin-top: 20px;
+}
+.risposta .risp-testo {
+  background-color: white;
+  display: inline;
+  padding: 5px 15px;
+}
 .ora-invio
 {
   background-color: rgb(127, 203, 80);
+}
+.ora-invio-risposta
+{
+  background-color: white;
 }
 .active
 {

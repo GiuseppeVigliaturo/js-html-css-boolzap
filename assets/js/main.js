@@ -16,10 +16,28 @@ $( document ).ready(function() {
   elmentmsg.find(".testo").text(messaggio);
 
   // appendiamo una copia con testo valorizzato del div "msgsent"
-  $("#contenitore").append(elmentmsg);
-
-  // ripuliamo il contenuto dell'input, per UX
+  $("#contenitore-mymessages").append(elmentmsg);
   $(".message").val("");
+
+  //risposta
+
+
+  var ris = "ok";
+  console.log(ris);
+
+  // facciamo una copia del div con classe "msgsent" che sta dentro
+  // un div con ID "template"
+  var elmentanswer = $("#template-risp .risposta").clone();
+
+  console.log(elmentanswer);
+
+  // modifica questa copia di "msgsent" aggiungendogli il testo del messaggio
+  elmentanswer.find(".risp-testo").text(ris);
+
+  // appendiamo una copia con testo valorizzato del div "msgsent"
+  $("#contenitore-answer").append(elmentanswer);
+
+
 
 });
 
@@ -30,9 +48,11 @@ $( document ).ready(function() {
       $(".contatto").removeClass("active");
       $(this).addClass("active");
 
-      var immagineavatar = $(".contatto.active .avatar").clone();
-      $(".contenitore-avatar").before(immagineavatar);
 
+          //cambio immagine al click
+      // var immagineavatar = $(".contatto.active .avatar img").clone();
+      // $(".contenitore-avatar").html(immagineavatar);
+          //aggiorno il nome al click
       var x=($(".contatto.active .nome").text());
       console.log(x);
       $("#nomecontatto").text(x);
