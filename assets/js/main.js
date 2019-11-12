@@ -21,18 +21,19 @@ $( document ).ready(function() {
   // ripuliamo il contenuto dell'input, per UX
   $(".message").val("");
 
-  })
+});
 
+//quando clicco su un contatto in particolare il suo riquadro cambia colore
 
-  // $(window).on({
-  //       keypress: function (k) {
-  //           console.log(k); //check which keycode
-  //
-  //           if (k.keyCode == "13") {
-  //               sendmsgs();
-  //           }
-  //
-  //       }
-  //   });
+  $(".contatto").click(function(){
+    if (!$(this).hasClass("active")) {
+      $(".contatto").removeClass("active");
+      $(this).addClass("active");
+      var x=($(".contatto.active .nome").text());
+      console.log(x);
+      $("#nomecontatto").text(x);
+    }
+
+  });
 
 });

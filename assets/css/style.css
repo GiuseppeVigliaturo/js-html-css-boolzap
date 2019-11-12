@@ -66,10 +66,11 @@ overflow-y: scroll;
   background-size: cover;
 
   /*debug*/
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+
+  /* display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: flex-end; */
 }
 .keyboard
 {
@@ -80,7 +81,7 @@ overflow-y: scroll;
 {
 width: 80%;
 display: inline-block;
-overflow-y: scroll;
+overflow-y: auto;
 
 }
 .keyboard i
@@ -110,4 +111,19 @@ overflow-y: scroll;
 .ora-invio
 {
   background-color: rgb(127, 203, 80);
+}
+.active
+{
+  background-color: rgb(128, 224, 172);
+}
+.answer
+{
+  color: black;
+  background-color: white;
+  display: inline;
+  padding: 5px 15px;
+}
+.avatar
+{
+  width:50px;
 }
