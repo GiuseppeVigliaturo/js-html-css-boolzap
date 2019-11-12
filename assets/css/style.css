@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid lightgrey;
   background-color: lightgrey;
 }
@@ -47,8 +47,15 @@ overflow-x: hidden;/* debug*/
 }
 .contatto
 {
-padding: 30px;
+padding: 20px;
 border: 1px solid black;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+}
+.status-contatto
+{
+  margin-left: 10px;
 }
 .listacontatti{
 width: 100%;

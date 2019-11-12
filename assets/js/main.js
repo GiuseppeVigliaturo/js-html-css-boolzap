@@ -29,6 +29,10 @@ $( document ).ready(function() {
     if (!$(this).hasClass("active")) {
       $(".contatto").removeClass("active");
       $(this).addClass("active");
+
+      var immagineavatar = $(".contatto.active .avatar").clone();
+      $(".contenitore-avatar").before(immagineavatar);
+
       var x=($(".contatto.active .nome").text());
       console.log(x);
       $("#nomecontatto").text(x);
