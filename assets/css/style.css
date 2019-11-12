@@ -4,14 +4,49 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* creo la classe terminator perchè questo simpaticone di bootstrap aggiunge margini e padding negativi */
+.terminator
+{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.wrapper
+{
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/sfondochat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+.wrapper .testa
+{
+  background-color: #1EBEA5;
+  width: 100%;
+  height: 150px;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mrgtop
+{
+  margin-top: 5%;
+}
+.profile
+{
+  background-color: lightgrey;
+}
 .profilo-user
 {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   padding: 10px;
-  border: 1px solid lightgrey;
-  background-color: lightgrey;
+  border: 1px solid black;
+
+
 }
 .profilo-contatto
 {
@@ -19,20 +54,25 @@
   justify-content: space-between;
   flex-direction: row;
   padding: 20px;
-  border: 1px solid lightgrey;
-  background-color: lightgrey;
+  border: 1px solid black;
+
 }
 .container-contatti
 {
   display: flex;
   flex-direction: column;
+  background-color: white;
+}
+.colsx
+{
+border: 1px solid black;
 }
 .notifiche
 {
 display: flex;
 justify-content: space-between;
 padding: 25px;
-border: 1px solid black;
+/* border: 1px solid black; */
 background-color: rgb(138, 212, 212);
 overflow-x: hidden;/* debug*/
 }
@@ -44,14 +84,22 @@ overflow-x: hidden;/* debug*/
 {
   padding: 15px;
   border: 1px solid black;
+  background-color: white;
+}
+.searchbar input
+{
+  width: 80%;
+overflow-x: hidden;/* debug*/
 }
 .contatto
 {
+background-color: white;
 padding: 20px;
-border: 1px solid black;
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
+border: 1px solid grey;
+
 }
 .status-contatto
 {
@@ -59,18 +107,17 @@ justify-content: flex-start;
 }
 .listacontatti{
 width: 100%;
-height: calc(60vh);
+height: calc(48vh);
 overflow-y: scroll;
 }
 .container-chat
 {
-
-  width: 100%;
-  height: calc(85vh - 30px);
+  height: calc(70vh - 20px);
   overflow-y: scroll;
   background-image: url("../img/sfondochat.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  border: 1px solid black;
 
   /*debug*/
 
@@ -81,8 +128,10 @@ overflow-y: scroll;
 }
 .keyboard
 {
+  width: 100%;
   padding: 8px;
   border: 1px solid black;
+  background-color: white;
 }
 .keyboard input
 {
@@ -100,14 +149,14 @@ overflow-y: auto;
  #contenitore-mymessages
  {
     text-align: right;
-    /* overflow: hidden; */
+
     margin-right: 10px;
 }
 #contenitore-answer
 {
    text-align: left;
    margin-left: 10px;
-   /* overflow: hidden; */
+
 }
  #template {
   display: none;
@@ -118,7 +167,7 @@ overflow-y: auto;
 
 .msgsent
 {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .msgsent .testo {
   background-color: rgb(127, 203, 80);
@@ -129,7 +178,7 @@ overflow-y: auto;
 /* per la risposta */
 .risposta
 {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .risposta .risp-testo {
   background-color: white;
