@@ -4,6 +4,8 @@ $( document ).ready(function() {
   var i=0;
   var contattocercato = "";
 
+  //milestone 1
+
   //agganciamo al click sull'icona di invio la funzione di callback
   $(".sendmsg").click(function(){
 
@@ -66,7 +68,7 @@ $( document ).ready(function() {
 
   });
 
-
+//milestone 2
   //prova tastiera
   $("input.research").keyup(function(){
     // quando digito nella barra di ricerca tutti i contatti spariscono
@@ -81,7 +83,7 @@ $( document ).ready(function() {
    $(".sendsearch").click(function(){
    //salvo il nome digitato nella searchbar
     contattocercato = $("input.research").val();
-    console.log("input  ",contattocercato);
+    // console.log("input  ",contattocercato);
 
    // faccio un ciclo che mi seleziona tutti i contatti
    $(".listacontatti .container-contatti .contatto").each(function(){
@@ -92,8 +94,7 @@ $( document ).ready(function() {
      var contactname = element.find(".nome").text();
      console.log(contactname);
 
-     // salvo tutti i nomi all'interno di un array
-     // listanomi.push(contactname);
+
      if (contactname.includes(contattocercato)) {
 
        element.addClass("visibile");
@@ -102,8 +103,6 @@ $( document ).ready(function() {
      }
 
   });
-
-  // console.log(listanomi);
 
    $("input.research").val("");
 
