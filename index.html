@@ -67,8 +67,8 @@
 
                 </div>
                 <div class="searchbar">
-                  <i class="fas fa-search"></i>
-                  <input type="text" placeholder="cerca contatto ..." name="" value="">
+                  <span class="sendsearch"><i class="fas fa-search"></i></span>
+                  <input class="research" type="text" placeholder="cerca contatto ..." name="" value="">
 
                 </div>
 
@@ -166,7 +166,7 @@
                           <img class="img-fluid" src="assets/img/avatar5.svg" alt="">
                           </div>
                           <div class="status-contatto">
-                          <span class="nome">Giuseppe Vigliaturo</span>
+                          <span class="nome">Giuseppe</span>
                           <p>online</p>
                           </div>
                         </div>
@@ -178,7 +178,7 @@
                           <img class="img-fluid" src="assets/img/avatar6.svg" alt="">
                           </div>
                           <div class="status-contatto">
-                          <span class="nome">Beyoncè</span>
+                          <span class="nome">goku</span>
                           <p>online</p>
                           </div>
 
@@ -186,19 +186,6 @@
                         </div>
                       </li>
 
-                      <li>
-                        <div class="contatto">
-                          <div class="avatar">
-                          <img class="img-fluid" src="assets/img/avatar7.svg" alt="">
-                          </div>
-                          <div class="status-contatto">
-                          <span class="nome"></span>
-                          <p>online</p>
-                          </div>
-
-
-                        </div>
-                      </li>
 
                       <li>
                         <div class="contatto">
@@ -214,6 +201,7 @@
                         </div>
                       </li>
 
+
                     </ul>
                   </div> <!-- fine container-contatti -->
 
@@ -224,20 +212,16 @@
 
               <div class="col-8 terminator direct">
 
-                  <div class="row terminator container-chat">
-                    <div class="col-6 terminator">
-                      <div id="contenitore-answer">
+                  <div class="terminator container-chat">
 
-                      </div>
+                    <!-- div che contiene i messaggi scritti da me -->
 
-                    </div>
-                    <div class="col-6 terminator">
-
-                      <div id="contenitore-mymessages">
-
-                      </div>
+                    <div id="contenitore-mymessages">
 
                     </div>
+                    <!-- div che contiene i messaggi scritti dal pc -->
+
+
                   </div>
 
 
@@ -263,9 +247,9 @@
         <div class="msgsent">
           <div class="testo"></div>
 
-          <!-- <sub class="ora-invio">
+          <sub class="ora-invio">
             10:10
-          </sub> -->
+          </sub>
 
         </div>
       </div>
