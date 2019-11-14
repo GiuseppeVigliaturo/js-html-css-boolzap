@@ -70,19 +70,19 @@ $( document ).ready(function() {
 
 //milestone 2
   //prova tastiera
-  $("input.research").keyup(function(){
+  $("input.research").keyup(function(k){
     // quando digito nella barra di ricerca tutti i contatti spariscono
    $(".listacontatti .container-contatti .contatto").hide();
 
-  });
+  // });
 
 
    //al click sulla searchbar faccio una ricerca per vedere se il nomecontatto
    //inserito è un contatto
 
-   $(".sendsearch").click(function(){
+   // $(".sendsearch").click(function(){
    //salvo il nome digitato nella searchbar
-    contattocercato = $("input.research").val();
+    contattocercato = $("input.research").val().toLowerCase();
     // console.log("input  ",contattocercato);
 
    // faccio un ciclo che mi seleziona tutti i contatti
@@ -91,7 +91,7 @@ $( document ).ready(function() {
      //salvo i contatti in una variabile esterna
      var element= $(this);
      console.log(element);
-     var contactname = element.find(".nome").text();
+     var contactname = element.find(".nome").text().toLowerCase();
      console.log(contactname);
 
 
@@ -104,9 +104,43 @@ $( document ).ready(function() {
 
   });
 
+  //quando premo il tasto invio la searchbar si resetta e i contatti tornano visibili
+
+  var x = k.which || k.keyCode;
+    console.log(x);
+
+  if(x === 13){
+      console.log("invio");
    $("input.research").val("");
+   $(".listacontatti .container-contatti .contatto").show();
+ }
 
  });
+
+ //milestone 3
+
+ //intercetto il click su dot per muovere il carousel cliccandoci
+
+// $(".contatto").click(function() {
+//   //mi salvo tutti i .dot presenti in pagina
+//   var dots = $(".contatto");
+//   var msgwindow = $("#contenitore-mymessages")
+//   console.log($(this));
+//   for(var i = 0; i < dots.length; i++) {
+//     console.log("entro nel for", dots.eq(i));
+//     //se il dot su cui clicco è uguale all'i-esimo dot ciclato allora il valore attuale del contatore i
+//     //posso usarlo come indice per risalire all'immagine
+//     if ($(this).is(dots.eq(i))) {
+//       //rimuovo active a tutte le finestre di messaggio
+//       msgwindow.removeClass("display-block").addClass("display-none");
+//
+//       msgwindow.eq(i).removeClass("display-none").addClass("display-block");
+//
+//   }
+//   $(".contatto.active").removeClass("active");
+//   $(this).addClass("active");
+// }
+// });
 
 
 
