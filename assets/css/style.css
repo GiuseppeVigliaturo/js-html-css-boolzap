@@ -45,8 +45,6 @@
   flex-direction: row;
   padding: 10px;
   border: 1px solid black;
-
-
 }
 .profilo-contatto
 {
@@ -56,6 +54,16 @@
   padding: 20px;
   border: 1px solid black;
 
+}
+.proile-sx
+{
+  display: flex;
+  justify-content: flex-start;
+}
+.proile-sx > p
+{
+  margin-top: 10px;
+  margin-left: 10px;
 }
 .container-contatti
 {
@@ -234,5 +242,22 @@ overflow-y: auto;
 }
 .display-block
 {
-  display: block;
+  display: block !important;
+}
+.dropdown
+{
+  position: relative;
+}
+.dropdown-content
+{
+  position: absolute;
+  top: 20px;
+  right: 0;
+  display: none;
+}
+.delete
+{
+  border-radius: 8px;
+  padding: 5px;
+  background-color: white;
 }

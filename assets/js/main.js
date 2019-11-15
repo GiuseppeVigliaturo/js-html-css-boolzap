@@ -1,12 +1,49 @@
 $( document ).ready(function() {
 
   var listanomi = [];
-  var i=0;
   var contattocercato = "";
+  var elementoCliccato;
+  var posizione;
+  var containerMessaggi;
 
   //milestone 1
 
-  //agganciamo al click sull'icona di invio la funzione di callback
+//quando clicco su un contatto in particolare il suo riquadro cambia colore
+//e cambia anche la schermata dei messaggi
+
+  $(".contatto").click(function(){
+
+ // mi salvo il contatto cliccato in una variabile
+    elementoCliccato = $(this);
+    //mi salvo la posizione dell'elemento cliccato in una variabile
+    posizione = elementoCliccato.index();
+    //mi salvo la posizione del mio contenitore messaggi
+    containerMessaggi = $('.contenitore-mymessages').eq(posizione);
+    console.log("la posizione dell'elemento è: ",containerMessaggi);
+
+  //elimino a prescindere la classe active da tutti i contatti
+    $(".contatto").removeClass("active");
+    //aggiungo la classe active al contatto cliccato
+    elementoCliccato.addClass("active");
+
+    //cambio immagine al click
+    var immagineavatar = $(".contatto.active .avatar").clone();
+    $(".contenitore-avatar").html(immagineavatar);
+
+    //aggiorno il nome al click
+    var aggiornanome=($(".contatto.active .status-contatto .nome").text());
+    $("#nomecontatto").text(aggiornanome);
+
+     //rendo visibile solo il contenitore dei messaggi corrispondente al contatto selezionato
+    $('.contenitore-mymessages').removeClass('display-block');
+    containerMessaggi.addClass('display-block');
+
+
+    //agganciamo al click sull'icona di invio la funzione di callback
+
+  });
+
+
   $(".sendmsg").click(function(){
 
   //ci salviamo il valore dell'input inserito dall'utente
@@ -21,8 +58,9 @@ $( document ).ready(function() {
   // modifica questa copia di "msgsent" aggiungendogli il testo del messaggio
   elmentmsg.find(".testo").text(messaggio);
 
-  // appendiamo una copia con testo valorizzato del div "msgsent"
-  $("#contenitore-mymessages").append(elmentmsg);
+  // appendiamo una copia con testo valorizzato del div "msgsent" alla finestra messaggi corrispondente
+
+  containerMessaggi.append(elmentmsg);
   $(".message").val("");
 
   //risposta automatica
@@ -39,8 +77,8 @@ $( document ).ready(function() {
     // modifica questa copia di "msgsent" aggiungendogli il testo del messaggio
     elmentanswer.find(".risp-testo").text(ris);
 
-    // appendiamo una copia con testo valorizzato del div "msgsent"
-    $("#contenitore-mymessages").append(elmentanswer);
+    // appendiamo una copia con testo valorizzato del div "msgsent"alla finestra
+    containerMessaggi.append(elmentanswer);
 
 
   }, 1000);
@@ -48,25 +86,11 @@ $( document ).ready(function() {
 
 });
 
-//quando clicco su un contatto in particolare il suo riquadro cambia colore
 
-  $(".contatto").click(function(){
-    if (!$(this).hasClass("active")) {
-      $(".contatto").removeClass("active");
-      $(this).addClass("active");
+// $( "body").delegate( "div.testo", "click", function() {
+//   $( this);
+// });
 
-
-          //cambio immagine al click
-      var immagineavatar = $(".contatto.active .avatar").clone();
-      $(".contenitore-avatar").html(immagineavatar);
-          //aggiorno il nome al click
-      var x=($(".contatto.active .status-contatto .nome").text());
-
-      $(".contenitore-avatar #nomecontatto").text(x);
-      console.log(x);
-    }
-
-  });
 
 //milestone 2
   //prova tastiera
@@ -117,31 +141,16 @@ $( document ).ready(function() {
 
  });
 
- //milestone 3
 
- //intercetto il click su dot per muovere il carousel cliccandoci
+ // parto da un elemento statico,
+ // poi mi sposto su .contenitore-mymessages
+   $(document).on("click", ".contenitore-mymessages", function (event) {
 
-// $(".contatto").click(function() {
-//   //mi salvo tutti i .dot presenti in pagina
-//   var dots = $(".contatto");
-//   var msgwindow = $("#contenitore-mymessages")
-//   console.log($(this));
-//   for(var i = 0; i < dots.length; i++) {
-//     console.log("entro nel for", dots.eq(i));
-//     //se il dot su cui clicco è uguale all'i-esimo dot ciclato allora il valore attuale del contatore i
-//     //posso usarlo come indice per risalire all'immagine
-//     if ($(this).is(dots.eq(i))) {
-//       //rimuovo active a tutte le finestre di messaggio
-//       msgwindow.removeClass("display-block").addClass("display-none");
-//
-//       msgwindow.eq(i).removeClass("display-none").addClass("display-block");
-//
-//   }
-//   $(".contatto.active").removeClass("active");
-//   $(this).addClass("active");
-// }
-// });
+       $(this).find("span").toggle().click(function() {
+        $(this).parentsUntil(".contenitore-mymessages").addClass("display-none");
+      })
 
+   });
 
 
 });
