@@ -6,6 +6,7 @@ $( document ).ready(function() {
   var posizione;
   var containerMessaggi;
 
+
   //milestone 1
 
 //quando clicco su un contatto in particolare il suo riquadro cambia colore
@@ -73,7 +74,24 @@ $( document ).ready(function() {
   // containerMessaggi.append(elmentmsg);
   //versione con hb
   containerMessaggi.append(html);
-  $(".message").val("");
+  tempo();
+
+  // function tempo(){
+  //   var d = new Date();
+  //   var h = d.getHours();
+  //   var m = d.getMinutes();
+  //   var orario = h +":" + m ;
+  //   $(".demo").text(orario);
+  //
+  //   $(".message").val("");
+  //
+  // }
+
+
+
+
+
+
 
   //risposta automatica
   setTimeout(function(){
@@ -97,6 +115,8 @@ $( document ).ready(function() {
 
 
 });
+
+
 
 
 // $( "body").delegate( "div.testo", "click", function() {
@@ -167,6 +187,16 @@ $( document ).ready(function() {
 
 
    });
+
+   function tempo(){
+     var d = new Date();
+     var h = d.getHours();
+     var m = d.getMinutes();
+     var orario = h +":" + m ;
+     $(".demo").text(orario);
+     $(".message").val("");
+
+   }
 
 
 });
