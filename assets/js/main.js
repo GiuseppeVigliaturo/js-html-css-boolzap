@@ -46,21 +46,33 @@ $( document ).ready(function() {
 
   $(".sendmsg").click(function(){
 
+
   //ci salviamo il valore dell'input inserito dall'utente
   var messaggio = $(".message").val();
+  console.log(messaggio);
 
   // facciamo una copia del div con classe "msgsent" che sta dentro
   // un div con ID "template"
-  var elmentmsg = $("#template .msgsent").clone();
+  // var elmentmsg = $("#template .msgsent").clone();
+  //versione con handlebars
+  var source = $("#hb-template").html();
+  console.log(source);
+  var template = Handlebars.compile(source);
 
-  console.log(elmentmsg);
+
+  // console.log(elmentmsg);
 
   // modifica questa copia di "msgsent" aggiungendogli il testo del messaggio
-  elmentmsg.find(".testo").text(messaggio);
+  // elmentmsg.find(".testo").text(messaggio);
+    //versione con handlebars
+    var context = {text: messaggio};
+    var html = template(context);
 
   // appendiamo una copia con testo valorizzato del div "msgsent" alla finestra messaggi corrispondente
 
-  containerMessaggi.append(elmentmsg);
+  // containerMessaggi.append(elmentmsg);
+  //versione con hb
+  containerMessaggi.append(html);
   $(".message").val("");
 
   //risposta automatica
@@ -146,9 +158,13 @@ $( document ).ready(function() {
  // poi mi sposto su .contenitore-mymessages
    $(document).on("click", ".contenitore-mymessages", function (event) {
 
-       $(this).find("span").toggle().click(function() {
+     $(".contenitore-mymessages").find("i").click(function(){
+       $(".contenitore-mymessages").find("span").toggle().click(function() {
         $(this).parentsUntil(".contenitore-mymessages").addClass("display-none");
       })
+     })
+
+
 
    });
 

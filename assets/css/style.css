@@ -80,7 +80,7 @@ border: 1px solid black;
 {
 display: flex;
 justify-content: space-between;
-padding: 25px;
+padding: 5px;
 height: 100px;
 background-color: rgb(138, 212, 212);
 overflow-x: hidden;/* debug*/
@@ -257,7 +257,18 @@ overflow-y: auto;
 }
 .delete
 {
-  border-radius: 8px;
   padding: 5px;
   background-color: white;
+  margin-right: 5px;
+  cursor: pointer;
+}
+/* classi bonus */
+i.arrow-drop
+{
+  opacity: 0;
+}
+
+i.arrow-drop:hover
+{
+  opacity: 1;
 }

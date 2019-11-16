@@ -84,7 +84,7 @@
                           <img class="img-fluid" src="assets/img/avatar1.svg" alt="">
                           </div>
                           <div class="status-contatto">
-                          <span class="nome">Giacomo Poretti</span>
+                          <span class="nome">Nicola Elia</span>
                           <p>online</p>
                           </div>
 
@@ -277,21 +277,23 @@
 
 
     <!-- blocco template non visibile in pagina -->
-      <div id="template">
+      <!-- <div id="template">
         <div class="msgsent ">
           <div class="testo "></div>
+          <sub class="ora-invio">
+            10:10
+          </sub>
           <div>
+
             <span class="delete display-none">
               elimina messaggio
             </span>
           </div>
 
-          <sub class="ora-invio">
-            10:10
-          </sub>
+
 
         </div>
-      </div>
+      </div> -->
 
   <!-- template per la risposta -->
       <div id="template-risp">
@@ -307,8 +309,36 @@
 
     </div>
 
+    <script id="hb-template" type="text/x-handlebars-template">
 
 
+        <div class="msgsent ">
+
+          <div class="testo ">{{text}}
+            <i class="fas fa-chevron-down arrow-drop"></i>
+          </div>
+
+
+          <sub class="ora-invio">
+            10:10
+          </sub>
+          <div>
+
+            <span class="delete display-none">
+              elimina messaggio
+            </span>
+          </div>
+
+
+
+        </div>
+
+
+
+    </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/main.js">
   </script>
