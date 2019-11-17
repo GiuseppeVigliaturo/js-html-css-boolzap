@@ -5,6 +5,8 @@ $( document ).ready(function() {
   var elementoCliccato;
   var posizione;
   var containerMessaggi;
+  // var lastsend = tempo();
+
 
 
   //milestone 1
@@ -51,6 +53,7 @@ $( document ).ready(function() {
   //ci salviamo il valore dell'input inserito dall'utente
   var messaggio = $(".message").val();
   console.log(messaggio);
+  $(".last-access").text(tempo());
 
   // facciamo una copia del div con classe "msgsent" che sta dentro
   // un div con ID "template"
@@ -66,28 +69,17 @@ $( document ).ready(function() {
   // modifica questa copia di "msgsent" aggiungendogli il testo del messaggio
   // elmentmsg.find(".testo").text(messaggio);
     //versione con handlebars
-    var context = {text: messaggio};
+    var context = {text: messaggio, orarioinvio:tempo()};
+
+
     var html = template(context);
 
   // appendiamo una copia con testo valorizzato del div "msgsent" alla finestra messaggi corrispondente
 
   // containerMessaggi.append(elmentmsg);
   //versione con hb
+  // containerMessaggi.append(html);
   containerMessaggi.append(html);
-  tempo();
-
-  // function tempo(){
-  //   var d = new Date();
-  //   var h = d.getHours();
-  //   var m = d.getMinutes();
-  //   var orario = h +":" + m ;
-  //   $(".demo").text(orario);
-  //
-  //   $(".message").val("");
-  //
-  // }
-
-
 
 
 
@@ -106,11 +98,14 @@ $( document ).ready(function() {
 
     // modifica questa copia di "msgsent" aggiungendogli il testo del messaggio
     elmentanswer.find(".risp-testo").text(ris);
+    elmentanswer.find(".risp-ora").text(tempo());
 
     // appendiamo una copia con testo valorizzato del div "msgsent"alla finestra
     containerMessaggi.append(elmentanswer);
 
+    $(".message").val("");
 
+    tempo();
   }, 1000);
 
 
@@ -192,10 +187,10 @@ $( document ).ready(function() {
      var d = new Date();
      var h = d.getHours();
      var m = d.getMinutes();
-     var orario = h +":" + m ;
-     $(".demo").text(orario);
-     $(".message").val("");
-
+     var s = d.getSeconds();
+     var orario = h +":" + m +":" +s ;
+     // $(".demo").text(orario);
+     return orario;
    }
 
 

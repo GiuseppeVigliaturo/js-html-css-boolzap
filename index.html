@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>boolzap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
@@ -39,7 +40,7 @@
                   </div>
                       <div class="">
                         <div id="nomecontatto"></div>
-                        <div class="demo"></div>
+                        <div class="last-access"></div>
                       </div>
 
 
@@ -268,7 +269,7 @@
                 <div class="keyboard">
                 <i class="far fa-smile"></i>
                 <input class="message" type="text" placeholder="scrivi un messaggio ..." name="" value="">
-                <i class="fas fa-microphone"></i>
+                <!-- <i class="fas fa-microphone"></i> -->
                 <span class="sendmsg"><i class="fab fa-telegram-plane"></i></span>
 
                 </div>
@@ -304,12 +305,13 @@
   <!-- template per la risposta -->
       <div id="template-risp">
         <div class="risposta">
-          <div class="risp-testo"></div>
+          <div class="risp-testo">
 
-          <!-- <sub class="ora-invio-risposta">
-            10:10
-          </sub> -->
+          </div>
 
+          <div class = "risp-ora">
+
+          </div>
         </div>
       </div>
 
@@ -324,6 +326,7 @@
             <i class="fas fa-chevron-down arrow-drop"></i>
 
             <div class = "demo">
+              {{orarioinvio}}
 
             </div>
           </div>

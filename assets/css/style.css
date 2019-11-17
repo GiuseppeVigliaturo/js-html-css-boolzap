@@ -70,7 +70,7 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  height: 100%;
+  height: calc(84vh - 180px);
 }
 .colsx
 {
@@ -79,11 +79,10 @@ border: 1px solid black;
 .notifiche
 {
 display: flex;
-justify-content: space-between;
 padding: 5px;
-height: 100px;
+min-height: 100px;
 background-color: rgb(138, 212, 212);
-overflow-x: hidden;/* debug*/
+/* overflow-x: hidden;/* debug*/ */
 }
 .notifiche i
 {
@@ -91,7 +90,7 @@ overflow-x: hidden;/* debug*/
 }
 .searchbar
 {
-  padding: 15px;
+  padding: 5px;
   height: 50px;
   border: 1px solid black;
   background-color: white;
@@ -119,8 +118,9 @@ width: 100%;
 .listacontatti{
 position: relative;
 width: 100%;
-height: calc(75vh - 150px);
+/* height: calc(80vh - 180px); */
 overflow-y: scroll;
+background-color: white;
 }
 .container-chat
 {
@@ -130,13 +130,6 @@ overflow-y: scroll;
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid black;
-
-  /*debug*/
-
-  /* display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-  align-items: flex-end; */
 }
 .keyboard
 {
@@ -275,4 +268,43 @@ i.arrow-drop:hover
 .demo
 {
   font-size: 0.7em;
+}
+
+/* media query */
+
+@media screen and (min-width: 901px) {
+  .container-chat {
+      height: calc(78vh - 20px);
+    }
+
+    .container-contatti {
+    height: calc(88vh - 180px);
+}
+
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .container-chat {
+  height: calc(84vh - 20px);
+  }
+  .keyboard input {
+    width: 60%;
+  }
+
+  .container-contatti
+  {
+    height: calc(80vh - 180px);
+  }
+}
+
+@media screen  and (min-width: 451px) and (max-width: 900px) {
+  .container-chat {
+  height: calc(80vh - 40px);
+  }
+
+  .keyboard input {
+    width: 70%;
+  }
 }
